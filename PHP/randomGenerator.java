@@ -18,25 +18,19 @@ public class randomGenerator {
         while(randomList.size() < 500) {
             if(randomList.size() < 300)
             {
-                String[] x = dataList.get(getRandomNumber(12289, dataList.size() + 1));
-                if(randomList.contains(x) == false)
-                {
-                    randomList.add(x);
-                }
+                String[] x = dataList.get(getRandomNumber(11989, 15346));
+                randomList.add(x);
+                dataList.remove(x);
             }
             else if(randomList.size() < 450) {
-                String[] x = dataList.get(getRandomNumber(1160, dataList.size() + 1));
-                if(randomList.contains(x) == false)
-                {
-                    randomList.add(x);
-                }
+                String[] x = dataList.get(getRandomNumber(1087, dataList.size() + 1));
+                randomList.add(x);
+                dataList.remove(x);
             }
             else {
                 String[] x = dataList.get(getRandomNumber(0, dataList.size() + 1));
-                if(randomList.contains(x) == false)
-                {
-                    randomList.add(x);
-                }
+                randomList.add(x);
+                dataList.remove(x);
             }
         }
         for (String[] strings : randomList) {
