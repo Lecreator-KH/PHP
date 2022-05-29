@@ -1,4 +1,5 @@
 import csv
+from re import M
 from git import Repo
 import os
 
@@ -22,8 +23,11 @@ def start():
     except OSError as error:
         print(error)
     os.chdir(path)
-    for i in range(len(array)):
-        url = array[i][1]
+    min = 0
+    max = len(array)
+    # for i in range(len(array)):
+    while min < max:
+        url = array[min][1]
         print(url)
         fileName = url[19:]
         fileName = fileName.replace("/","-")
@@ -33,6 +37,7 @@ def start():
             Repo.clone_from(url, clonePath)
         except:
             print("File already installed")
+        min = min + 1
 
 if __name__ == "__main__":
     start()
